@@ -1,0 +1,120 @@
+
+  /* Main container styles */
+.restaurant-details {
+    
+    padding: 30px;
+    position: sticky;
+
+    /* background-color: white; */
+    /* background: none;
+    padding: 30px;
+    border-radius: 8px;
+    height: auto;  
+    width: 70%;
+    position: absolute;
+    left: 200px;
+    top: 50px;
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+    overflow: scroll; */
+}
+
+/* Heading for restaurant details */
+.restaurant-details h3 {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Restaurant sections */
+.restaurants-section {
+    display: flex;
+    margin-bottom: 40px;
+    background-color: rgb(245, 245, 245);
+    border-style: groove;
+    padding: 30px;
+    transition: background-color 0.3s ease 0.1s;
+    /* position: relative; */
+    /* height: 150px; */
+}
+
+.restaurants-section h4 {
+    font-size: 18px;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;  /* Reduced space between text and underline */
+    margin-bottom: 0; 
+    border-bottom: 2px solid #8b8888; /* Underline color */
+}
+
+/* Image styling */
+.restaurant-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+/* Button to order - Position it correctly */
+.menu-order {
+    position: absolute;
+    bottom: 15px;       /* Align button at the bottom */
+    right: 15px;        /* Align to the right */
+    padding: 10px 20px;
+   
+}
+
+/* Hover effect on restaurant sections */
+.restaurants-section:hover {
+    background-color: rgb(226, 226, 226);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    /* Make the main container width 100% on small screens */
+    .restaurant-details {
+        width: 80%;
+        left: 40px;
+        top: 10px;  /* Adjust top positioning for better spacing */
+        padding: 20px;
+    }
+
+    /* Stack restaurant sections vertically and adjust padding */
+    .restaurants-section {
+        padding: 20px;
+        margin: 10px 0;
+    }
+
+    /* Resize restaurant name for smaller screens */
+    .restaurants-section h4 {
+        font-size: 10px;
+        padding-bottom: 5px;  /* Smaller space for mobile */
+    }
+
+    /* Adjust logo size on mobile */
+    .restaurant-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Adjust button for smaller screens */
+    .menu-order {
+        font-size: 10px;
+        width: 40%;   /* Make button take full width */
+        bottom: 10px;  /* Reduce space between button and bottom */
+        right: 40px;      /* Center button */
+    }
+}
+
+@media (max-width: 480px) {
+    /* For very small screens (e.g., mobile phones in portrait mode) */
+    .restaurant-details {
+        padding: 10px;   /* Reduce padding for smaller screens */
+    }
+
+    .restaurants-section h4 {
+        font-size: 14px;  /* Smaller font for restaurant name */
+    }
+
+    .menu-order {
+        padding: 8px 15px;  /* Adjust padding for smaller buttons */
+    }
+}

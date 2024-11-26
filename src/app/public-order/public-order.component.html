@@ -1,0 +1,28 @@
+
+
+ <div class="menu-container">
+  <button class="back-button" [routerLink]="['/dashboard/home']">← Back to restaurants</button>
+  
+  <div class="search-bar">
+    <input type="text" placeholder="Search..." [(ngModel)]="searchText" />
+    <button class="clear-btn" (click)="clearSearch()">clear</button>
+  </div>
+
+<div *ngFor="let category of menu | searchfilter:searchText">
+  <h2>{{ category.name }}</h2>
+    <div class="item-container">
+      <div *ngFor="let item of category.items" class="item">
+        <div class="item-info">
+          <p>{{ item.name }}</p>
+          <p class="item-price">₹{{ item.price }}</p>
+        </div>
+        <div class="item-image">
+          <img [src]="item.imageUrl" alt="{{ item.name }}" />
+          <button class="add-button" (click)="addItem(item)">ADD</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ </div>
+

@@ -1,0 +1,29 @@
+[
+
+    {
+        "id":1,
+        "name":"tea",
+        "image":"images/teacup.jpg",
+        "price":12,
+        "available":true,
+        "quantity":0
+    },
+    {
+        "id":2,
+        "name":"coffee",
+        "image":"images/coffee.jpg",
+        "price":25,
+        "available":true,
+        "quantity":0
+
+    },
+    {
+        "id":3,
+        "name":"meals",
+        "image":"images/download.jpg",
+        "price":125,
+        "available":true,
+        "quantity":0
+
+    }
+]

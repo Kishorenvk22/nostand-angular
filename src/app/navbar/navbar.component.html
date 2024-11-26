@@ -1,0 +1,82 @@
+<div class="upper-navbar">
+  <div class="menu-toggle" (click)="toggleSidebar()">&#9776;</div>
+
+  <div class="brand">FOOD</div>
+  <div class="menu-items">
+      <a href="#" (click)="toggleCard('user')">
+          <img src="images/user_icon.png" style="width:35px">
+      </a>
+      
+        <div class="cart-icon">
+          <button (click)="toggleCart()">
+            <i class="cart-icon">🛒</i>
+            Item(s): {{ cartData.length }}
+          </button>
+        </div>
+  </div>
+</div>
+
+
+<!-- <div class="cart-modal" *ngIf="istogglecartOpen">
+  <div class="cart-modal-content">
+    <button class="btn-close" (click)="toggleCart()"></button>
+    <h3>Your Cart</h3>
+    <ul>
+      <li *ngFor="let item of cartData">{{item.name}} - ₹{{ item.price }}</li>
+    </ul>
+    <div *ngIf="cartData.length === 0">Your cart is empty.</div>
+  </div>
+</div> -->
+
+<div *ngIf="istogglecartOpen" class="cart-container">
+  <div class="cart-header">
+    <h2>Invoice</h2>
+    <button (click)="toggleCart()">Close</button>
+  </div>
+
+  <div class="cart-items">
+    <div *ngFor="let item of cartData">
+      <div class="cart-item">
+        <span>{{ item.name }}</span>
+        <span>₹{{ item.price }}</span>
+        <span>x {{ item.quantity }}</span>
+        <span>₹{{ item.price * item.quantity }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-summary">
+    <div class="summary-item">
+      <span>Subtotal</span>
+      <span>₹{{ subtotal }}</span>
+    </div>
+    <div class="summary-item">
+      <span>GST (18%)</span>
+      <span>₹{{ gst }}</span>
+    </div>
+    <div class="summary-item">
+      <span>Total</span>
+      <span>₹{{ total }}</span>
+    </div>
+  </div>
+
+  <div class="cart-actions">
+    <button (click)="logout()">Logout</button>
+  </div>
+</div>
+
+
+<div class="side-navbar" [class.open]="sidebarOpen">
+  <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="toggleSidebar()"></button>
+
+  <ul>
+      <li><a style="color: rgb(255, 255, 255); cursor: pointer;" [routerLink]="['/dashboard/home']">Restaurants</a></li>
+      <li><a style="color: rgb(255, 255, 255);">Feedback</a></li>
+      <li><a style="color: rgb(255, 255, 255);">My Profile</a></li>
+      <li><a style="color: rgb(255, 255, 255); cursor: pointer;" (click)="logout()">Logout</a></li>
+  </ul>
+</div>
+
+<div class="main-content">
+      <router-outlet></router-outlet>
+    </div>

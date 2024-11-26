@@ -1,0 +1,45 @@
+<!-- <div class="upper-navbar">
+  <div class="menu-toggle" (click)="toggleSidebar()">&#9776;</div>
+
+  <div class="brand">FOOD</div>
+  <div class="menu-items">
+      <a href="#" (click)="toggleCard('user')">
+          <img src="images/user_icon.png" style="width:35px">
+      </a>
+      
+      <a href="#" (click)="toggleCard('cart')">
+          <img src="images/cart_icon.png" style="width:35px">
+      </a>
+  </div>
+</div>
+
+<div class="side-navbar" [class.open]="sidebarOpen">
+  <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="toggleSidebar()"></button>
+
+  <ul>
+      <li><a style="color: rgb(255, 255, 255);">Restaurants</a></li>
+      <li><a style="color: rgb(255, 255, 255);">Feedback</a></li>
+      <li><a style="color: rgb(255, 255, 255);">My Profile</a></li>
+      <li><a style="color: rgb(255, 255, 255);">Logout</a></li>
+  </ul>
+</div> -->
+<!-- home.html: -->
+<div class="restaurant-details">
+  <h3>Our Restaurants</h3>
+
+  <div *ngFor="let section of restaurants" class="restaurants-section">
+      <img [src]="section.logoUrl" alt="{{ section.category }} logo" class="restaurant-logo" style="position: relative; bottom: 20px;">
+      
+      <h4 style="position: relative; bottom: 15px; font-size: 23px">{{section.category}}</h4>
+      
+      <div class="rating">
+          <ng-container *ngFor="let star of [].constructor(5); let i = index">
+              <img *ngIf="i < section.rating" src="images/star.png" alt="Star" class="star-icon">
+              <img *ngIf="i >= section.rating" src="images/starEmpty.png" alt="Empty Star" class="star-icon">
+          </ng-container>
+      </div>
+            <div class="button-menu-order">
+          <button class="btn btn-dark menu-order" [routerLink]="['/dashboard/public-order']" [queryParams]="{ restaurantId: section.id }">View menu & order</button>
+      </div>
+  </div>
+</div>

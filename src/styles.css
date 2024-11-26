@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* html, body { 
+    height: 100%;
+    margin: 0;
+  }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+/* body{
+  
+    width: 100%;
+    min-height: 100vh;
+    background-image: radial-gradient(circle, rgb(235, 229, 219), transparent 20%, rgba(7, 59, 0, 0.801));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(241, 241, 240);
+
+} */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
