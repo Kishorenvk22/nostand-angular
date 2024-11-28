@@ -71,7 +71,6 @@ export class PublicOrderComponent {
   }
 
   addItem(item: any) {
-    debugger;
     const existingItems=this.cart.find(cartItem=> cartItem.name===item.name);
 
     if(existingItems){

@@ -31,7 +31,6 @@ export class FoodServiceService {
   }
 
   calculateSubtotal():number{
-    debugger;
     return this.cartData.value.reduce((total,item)=> total+item.price*item.quantity,0);
   }
 

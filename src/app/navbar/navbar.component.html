@@ -17,16 +17,7 @@
 </div>
 
 
-<!-- <div class="cart-modal" *ngIf="istogglecartOpen">
-  <div class="cart-modal-content">
-    <button class="btn-close" (click)="toggleCart()"></button>
-    <h3>Your Cart</h3>
-    <ul>
-      <li *ngFor="let item of cartData">{{item.name}} - ₹{{ item.price }}</li>
-    </ul>
-    <div *ngIf="cartData.length === 0">Your cart is empty.</div>
-  </div>
-</div> -->
+
 
 <div *ngIf="istogglecartOpen" class="cart-container">
   <div class="cart-header">
@@ -34,12 +25,18 @@
     <button (click)="toggleCart()">Close</button>
   </div>
 
-  <div class="cart-items">
+  <div class="cart-items" >
     <div *ngFor="let item of cartData">
-      <div class="cart-item">
+      <div class="cart-item" >
         <span>{{ item.name }}</span>
         <span>₹{{ item.price }}</span>
-        <span>x {{ item.quantity }}</span>
+
+        <div class="quantity-control">
+          <button type="button" class="btn btn-secondary minusQuantity" (click)="decreaseQuantity(item)">-</button>
+          <span>x {{ item.quantity }}</span>
+          <button  type="button" class="btn btn-secondary" (click)="increaseQuantity(item)">+</button>
+        </div>
+
         <span>₹{{ item.price * item.quantity }}</span>
       </div>
     </div>
@@ -80,3 +77,16 @@
 <div class="main-content">
       <router-outlet></router-outlet>
     </div>
+
+
+
+    <!-- <div class="cart-modal" *ngIf="istogglecartOpen">
+  <div class="cart-modal-content">
+    <button class="btn-close" (click)="toggleCart()"></button>
+    <h3>Your Cart</h3>
+    <ul>
+      <li *ngFor="let item of cartData">{{item.name}} - ₹{{ item.price }}</li>
+    </ul>
+    <div *ngIf="cartData.length === 0">Your cart is empty.</div>
+  </div>
+</div> -->

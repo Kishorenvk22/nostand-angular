@@ -207,12 +207,18 @@
 
 .cart-items {
   margin-bottom: 20px;
+
 }
 
 .cart-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;  /* Ensure all elements align in the same vertical line */
   margin-bottom: 10px;
+  width: 100%;  /* Ensure full width usage */
+  /* display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; */
 }
 
 .cart-item span {
@@ -245,6 +251,36 @@
   cursor: pointer;
 }
 
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  margin-left: 15px;
+}
+.quantity-control button {
+  background-color: #c5c0c0;
+  color: rgb(0, 0, 0);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-flex; /* Ensures the button respects alignment */
+  align-items: center;  /* Centers button text vertically */
+}
+
+.quantity-control button:hover {
+  background-color: #ddd;
+}
+
+.quantity-control span {
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 
 @media (max-width: 768px) {
   .cart-icon button {
@@ -255,6 +291,30 @@
   .cart-icon i {
     font-size: 20px;      /* Adjust cart icon size */
   }
+}
+
+@media (max-width: 768px) {
+  .cart-container{
+    height: 66%;
+    right: 43px;
+    top: 212px;
+  }
+  .cart-item {
+    display: flex;
+    flex-direction: row;  /* Maintain horizontal layout even on smaller screens */
+    align-items: center;
+    /* justify-content: flex-start; */
+  }
+
+  .cart-item span {
+    width: auto;
+    text-align: left;
+  }
+
+  .quantity-control {
+    margin-left: 70px;  /* Space between item name/price and quantity controls */
+  }
+  
 }
 
 

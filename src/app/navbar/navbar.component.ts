@@ -14,12 +14,14 @@ export class NavbarComponent implements OnInit{
   constructor(private authservice:AuthService,private router:Router,private foodservice:FoodServiceService){}
   
 
-  istogglecartOpen:boolean=false;
+  istogglecartOpen:boolean=true;
   cartData:any[]=[];
   subtotal:number=0;
   gst:number=0;
   total:number=0;
   
+
+
   ngOnInit(): void {
     this.foodservice.currentData.subscribe((data: any[])=>
       {
@@ -54,6 +56,30 @@ export class NavbarComponent implements OnInit{
   toggleCart(){
     this.istogglecartOpen=!this.istogglecartOpen;
   }
-  
- 
+
+  increaseQuantity(item:any){
+    item.quantity++;
+    this.updatecart();
+  }
+
+  decreaseQuantity(item:any){
+    if(item.quantity>1){
+      item.quantity--;
+    }
+    else if(item.quantity===1){
+      this.cartData=this.cartData.filter(cartitem=> cartitem!==item);
+    }
+    this.updatecart();
+
+
+  }
+
+  updatecart(){
+    this.foodservice.updateCartData(this.cartData);
+    this.subtotal=this.foodservice.calculateSubtotal();
+    this.gst=this.foodservice.calculateGST();
+    this.total=this.foodservice.calculateTotal();
+
+  }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 }
