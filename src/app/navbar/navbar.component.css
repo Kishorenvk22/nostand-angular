@@ -281,6 +281,21 @@
   font-weight: bold;
 }
 
+.usertoggleCart {
+  position: fixed;
+  top: 100px;
+  right: 42%;
+  width: 350px;
+  height: 80%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.493);
+  padding: 20px;
+  z-index: 999;
+  overflow-y: auto;
+  justify-content: center;
+  align-items: center;
+}
+
 
 @media (max-width: 768px) {
   .cart-icon button {

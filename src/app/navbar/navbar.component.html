@@ -3,9 +3,9 @@
 
   <div class="brand">FOOD</div>
   <div class="menu-items">
-      <a href="#" >
+      <i  (click)="toggleUsercard()" style="  cursor: pointer;">
           <img src="images/user_icon.png" style="width:35px">
-      </a>
+      </i>
       
         <div class="cart-icon">
           <button (click)="toggleCart()">
@@ -15,9 +15,6 @@
         </div>
   </div>
 </div>
-
-
-
 
 <div *ngIf="istogglecartOpen" class="cart-container">
   <div class="cart-header">
@@ -58,7 +55,7 @@
   </div>
 
   <div class="cart-actions">
-    <button (click)="logout()">Logout</button>
+    <button (click)="proceedToPayment()">proceed To Pay</button>
   </div>
 </div>
 
@@ -75,8 +72,8 @@
 </div>
 
 <div class="main-content">
-      <router-outlet></router-outlet>
-    </div>
+    <router-outlet></router-outlet>
+</div>
 
 
 

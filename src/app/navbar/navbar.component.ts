@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { FoodServiceService } from '../food-service.service';
 
+declare var Razorpay:any;
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -14,14 +16,41 @@ export class NavbarComponent implements OnInit{
   constructor(private authservice:AuthService,private router:Router,private foodservice:FoodServiceService){}
   
 
-  istogglecartOpen:boolean=true;
+  isusertoggleCart:boolean=false;
+  istogglecartOpen:boolean=false;
   cartData:any[]=[];
   subtotal:number=0;
   gst:number=0;
   total:number=0;
   
+  
 
+  proceedToPayment() {
+    this.foodservice.createOrder(this.total).subscribe((response: any) => {
+      const options = {
+        key: 'rzp_test_xcoman15SogwMC', // Replace with Razorpay Key
+        amount: this.total * 100,
+        currency: 'INR',
+        name: 'Food Project',
+        description: 'Test Transaction',
+        order_id: JSON.parse(response).id,
+        handler: (response: any) => {
+          alert('Payment Success! ' + response.razorpay_payment_id);
+        },
+        prefill: {
+          name: 'Customer Name',
+          email: 'customer@example.com',
+          contact: '9999999999',
+        },
+        theme: {
+          color: '#3399cc',
+        },
+      };
 
+      const razorpay = new Razorpay(options);
+      razorpay.open();
+    });
+  }
   ngOnInit(): void {
     this.foodservice.currentData.subscribe((data: any[])=>
       {
@@ -57,6 +86,10 @@ export class NavbarComponent implements OnInit{
     this.istogglecartOpen=!this.istogglecartOpen;
   }
 
+  toggleUsercard(){
+    this.isusertoggleCart=!this.isusertoggleCart;
+  }
+
   increaseQuantity(item:any){
     item.quantity++;
     this.updatecart();
@@ -81,5 +114,7 @@ export class NavbarComponent implements OnInit{
     this.total=this.foodservice.calculateTotal();
 
   }
+
+  
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 }

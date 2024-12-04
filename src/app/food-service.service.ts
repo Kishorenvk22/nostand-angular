@@ -12,8 +12,19 @@ export class FoodServiceService {
   private cartData= new BehaviorSubject<any[]>([]);
   currentData=this.cartData.asObservable();
 
+  private apiUrl = 'http://localhost:8080/api/payment';
 
-  constructor(){}
+
+
+  constructor(private httpclient:HttpClient){}
+
+
+  createOrder(amount: number) {
+    return this.httpclient.post(`${this.apiUrl}/create`, null, {
+      params: { amount: amount.toString() },
+      responseType: 'text',
+    });
+  }
 
   getcartFromLocalStorage():any[]{
     const cart = localStorage.getItem('cart');

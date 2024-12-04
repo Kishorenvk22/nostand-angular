@@ -8,21 +8,34 @@
     <button class="clear-btn" (click)="clearSearch()">clear</button>
   </div>
 
-<div *ngFor="let category of menu | searchfilter:searchText">
-  <h2>{{ category.name }}</h2>
-    <div class="item-container">
-      <div *ngFor="let item of category.items" class="item">
-        <div class="item-info">
-          <p>{{ item.name }}</p>
-          <p class="item-price">₹{{ item.price }}</p>
-        </div>
-        <div class="item-image">
-          <img [src]="item.imageUrl" alt="{{ item.name }}" />
-          <button class="add-button" (click)="addItem(item)">ADD</button>
+  <div *ngFor="let category of menu | searchfilter:searchText">
+    <h2>{{ category.name }}</h2>
+      <div class="item-container">
+        <div *ngFor="let item of category.items" class="item">
+          <div class="item-info">
+            <p>{{ item.name }}</p>
+            <p class="item-price">₹{{ item.price }}</p>
+          </div>
+          <div class="item-image">
+            <img [src]="item.imageUrl" alt="{{ item.name }}" />
+            <button class="add-button" (click)="openAddToCartModal(item)">ADD</button>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
+  </div> 
  </div>
 
+ <div class="modal" *ngIf="isModalOpen">
+  <div class="modal-content">
+    <h3>Add {{ selectedItem?.name }} to Cart</h3>
+    <div class="quantity-control">
+      <button (click)="decreaseQuantity()" type="button" class="btn btn-dark">-</button>
+      <span>{{ selectedItem?.quantity }}</span>
+      <button (click)="increaseQuantity()" type="button" class="btn btn-dark">+</button>
+    </div>
+    <div class="modal-actions">
+      <button class="add-to-cart" (click)="addToCart()" type="button" class="btn btn-success">Add to Cart</button>
+      <button class="close-modal" (click)="closeModal()" type="button" class="btn btn-danger">Cancel</button>
+    </div>
+  </div>
+</div>
