@@ -17,11 +17,12 @@ export class NavbarComponent implements OnInit{
   
 
   isusertoggleCart:boolean=false;
-  istogglecartOpen:boolean=false;
+  istogglecartOpen:boolean=true;
   cartData:any[]=[];
   subtotal:number=0;
   gst:number=0;
   total:number=0;
+  
   
   
 
@@ -72,10 +73,14 @@ export class NavbarComponent implements OnInit{
 
   restaurantCardOpen : boolean=false;
 
+  preventClose(event: Event) {
+    event.stopPropagation();
+  }
+  
   toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;
   }
-
+  
   logout() {
     localStorage.removeItem('cart');
     this.foodservice.clearCartData();

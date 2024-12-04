@@ -27,7 +27,12 @@
 
  <div class="modal" *ngIf="isModalOpen">
   <div class="modal-content">
-    <h3>Add {{ selectedItem?.name }} to Cart</h3>
+    <h5 style="font-size: large;">Add {{ selectedItem?.name }} to Cart</h5>
+
+    <div class="item-image-container">
+      <img [src]="selectedItem?.imageUrl" alt="{{selectedItem?.name}}" class="item-image-cart">
+    </div>
+
     <div class="quantity-control">
       <button (click)="decreaseQuantity()" type="button" class="btn btn-dark">-</button>
       <span>{{ selectedItem?.quantity }}</span>
