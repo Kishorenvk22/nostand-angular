@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit{
   
 
   proceedToPayment() {
+    console.log('razorpay')
     this.foodservice.createOrder(this.total).subscribe((response: any) => {
       const options = {
         key: 'rzp_test_xcoman15SogwMC', // Replace with Razorpay Key

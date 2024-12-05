@@ -18,7 +18,7 @@ const routes: Routes = [
     path: 'login', component: RegisterComponent // Default route for login
   },
   {
-    path: 'dashboard', component: NavbarComponent, canActivate: [AuthGuard], children: [
+    path: 'dashboard', component: NavbarComponent, children: [
       {
         path: 'home', component: HomeComponent  // Home page after login
       },
@@ -27,7 +27,7 @@ const routes: Routes = [
       }
     ]
   },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
   // { path: '**', redirectTo: 'login' }
   
 ];
