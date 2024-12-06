@@ -17,12 +17,15 @@ export class NavbarComponent implements OnInit{
   
 
   isusertoggleCart:boolean=false;
-  istogglecartOpen:boolean=true;
+  istogglecartOpen:boolean=false;
   cartData:any[]=[];
   subtotal:number=0;
   gst:number=0;
   total:number=0;
   
+  // userLoggedIn:boolean=true;
+  // isLoggedIn:boolean=true;
+  // username:string|null='';
   
   
 
@@ -68,6 +71,8 @@ export class NavbarComponent implements OnInit{
 
       });
        // Log the data to console
+      //  this.userLoggedIn=this.authservice.isLoggedIn();
+      //  this.username=this.authservice.getUsername();
 
   }
   sidebarOpen: boolean = false;
@@ -86,7 +91,9 @@ export class NavbarComponent implements OnInit{
     localStorage.removeItem('cart');
     this.foodservice.clearCartData();
     this.authservice.logout();
-    this.router.navigate(['/login']);
+    // this.isLoggedIn=false;
+    // this.username=null;
+    // this.router.navigate(['/login']);
   }
   toggleCart(){
     this.istogglecartOpen=!this.istogglecartOpen;

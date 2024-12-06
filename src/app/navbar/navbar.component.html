@@ -1,10 +1,21 @@
 <div class="upper-navbar">
   <div class="menu-toggle" (click)="toggleSidebar()">&#9776;</div>
 
-  <div class="brand">FOOD</div>
+  <div class="brand" [routerLink]="['/dashboard/home']">FOOD</div>
+  <div class="greeting-text">
+
+    <h6>Hi, Guest-User</h6>  
+     
+
+  </div>
   <div class="menu-items">
       <i  (click)="toggleUsercard()" style="  cursor: pointer;">
-          <img src="images/user_icon.png" style="width:35px">
+          <!-- <img src="images/user_icon.png" style="width:35px"> -->
+          <div class="loginSignUp-buttons">
+            <button type="button" class="btn btn-outline-light mr-2" >Login</button>
+
+            <button type="button" class="btn btn-outline-light">Sign-up</button>
+        </div>
       </i>
       
         <div class="cart-icon">
@@ -14,6 +25,15 @@
           </button>
         </div>
   </div>
+</div>
+
+<!-- userAccount Toggle -->
+<div class="userAccountCart" *ngIf="isusertoggleCart" (click)="toggleUsercard()">
+    <div *ngIf="isusertoggleCart" class="cart-dropdown" (click)="preventClose($event)">
+      <button >Login</button>
+      <button >Sign In</button>
+      <button >Sign Up</button>
+    </div>
 </div>
 
 
@@ -26,7 +46,7 @@
 
   <div class="cart-items" >
     <div *ngFor="let item of cartData">
-      <div class="cart-item" >
+      <div class="cart-item" >            
         <span>{{ item.name }}</span>
         <span>₹{{ item.price }}</span>
 
@@ -64,8 +84,56 @@
 
 
 <div *ngIf="sidebarOpen" class="navbar-backdrop" (click)="toggleSidebar()"></div>
-  <div class="side-navbar" [class.open]="sidebarOpen">
-    <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="toggleSidebar()"></button>
+<div class="side-navbar" [class.open]="sidebarOpen">
+  <!-- Added close button with modern design -->
+  <button
+    type="button"
+    class="btn-close btn-close-white"
+    aria-label="Close"
+    (click)="toggleSidebar()"
+  ></button>
+
+  <!-- Added a sidebar header section -->
+  <div class="sidebar-header">
+    <h2>Menu</h2>
+  </div>
+
+  <ul class="sidebar-menu">
+    <li (click)="preventClose($event)">
+      <!-- Added an icon next to the menu text -->
+      <a
+        class="menu-link"
+        [routerLink]="['/dashboard/home']"
+        (click)="toggleSidebar()"
+      >
+        <i class="fas fa-utensils"></i> Restaurants
+      </a>
+    </li>
+    <li>
+      <a class="menu-link">
+        <!-- Added an icon next to the menu text -->
+        <i class="fas fa-comments"></i> Feedback
+      </a>
+    </li>
+    <li>
+      <a class="menu-link">
+        <!-- Added an icon next to the menu text -->
+        <i class="fas fa-user"></i> My Profile
+      </a>
+    </li>
+    <li>
+      <a class="menu-link" (click)="logout()">
+        <!-- Added an icon next to the menu text -->
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </a>
+    </li>
+  </ul>
+</div>
+
+  <!-- <div class="side-navbar" [class.open]="sidebarOpen">
+    <button type="button" 
+    class="btn-close btn-close-white" 
+    aria-label="Close" (click)="toggleSidebar()"></button>
 
     <ul>
         <li (click)="preventClose($event)"><a style="color: rgb(255, 255, 255); cursor: pointer;" [routerLink]="['/dashboard/home']" (click)="toggleSidebar()">Restaurants</a></li>
@@ -73,7 +141,7 @@
         <li><a style="color: rgb(255, 255, 255);">My Profile</a></li>
         <li><a style="color: rgb(255, 255, 255); cursor: pointer;" (click)="logout()">Logout</a></li>
     </ul>
-  </div>
+  </div> -->
 <div class="main-content">
     <router-outlet></router-outlet>
 </div>

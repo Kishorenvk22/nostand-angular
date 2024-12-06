@@ -14,14 +14,15 @@ import { RestaurantsDetailsComponent } from './restaurants-details/restaurants-d
 
 
 const routes: Routes = [
-  {
-    path: 'login', component: RegisterComponent // Default route for login
-  },
+  
   {
     path: 'dashboard', component: NavbarComponent, children: [
       {
         path: 'home', component: HomeComponent  // Home page after login
       },
+      // {
+      //   path: 'login', component: RegisterComponent 
+      // },
       {
         path: 'public-order', component: PublicOrderComponent  // Public Order page
       }

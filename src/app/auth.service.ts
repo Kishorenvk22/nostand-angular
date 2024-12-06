@@ -28,6 +28,7 @@ export class AuthService {
         if (response) {
           // this.isLoggedInStatus = true;
           localStorage.setItem('isLoggedIn','true');
+          localStorage.setItem('username', username);
         }
       })
     );
@@ -38,9 +39,15 @@ export class AuthService {
     return localStorage.getItem('isLoggedIn')==='true';
   }
 
+  getUsername():string|null{
+    return localStorage.getItem('username');
+  }
+
   logout() {
-    this.isLoggedInStatus = false;
+    // this.isLoggedInStatus = false;
     localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
+
   }
 }
 
