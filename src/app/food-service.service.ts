@@ -13,6 +13,7 @@ export class FoodServiceService {
   currentData=this.cartData.asObservable();
 
   private apiUrl = 'https://nostand-springboot-production.up.railway.app/api/payment';
+  // private apiUrl= 'http://localhost:8080/api/payment';
 
 
 

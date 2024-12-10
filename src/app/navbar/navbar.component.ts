@@ -32,7 +32,7 @@ export class NavbarComponent implements OnInit{
     this.showLogin = !this.showLogin;
     if (this.showLogin) {
       // Navigate to the child route 'login'
-      this.router.navigate(['loginforUser']);
+      // this.router.navigate(['loginforUser']);
     } else {
       // Navigate back to the parent route
       this.router.navigate(['']);

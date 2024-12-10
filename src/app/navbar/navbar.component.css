@@ -479,14 +479,7 @@
 }
 
 /* Style for the login card */
-.login-card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 469px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  position: relative;
-}
+
 
 
 /* Mobile Styles */
