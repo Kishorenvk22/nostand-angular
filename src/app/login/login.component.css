@@ -1,0 +1,120 @@
+/* Overall container style */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title */
+  .login-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Google Login Button */
+  .google-login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #66bdf0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .google-login-btn:hover{
+    background-color: #348ff0;
+    transition:background 0.3s ease, transform 0.2s ease
+  }
+  .google-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Divider */
+  .divider {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .divider span {
+    background-color: #f1f1f1;
+    padding: 5px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+  }
+  
+  /* Form Styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3;
+    transition:  background 0.3s ease, transform 0.2s ease
+  }
+  
+  /* Links */
+  .links {
+    text-align: center;
+  }
+  
+  .forgot-password {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  .signup-link {
+    font-size: 14px;
+  }
+  
+  .signup-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  

@@ -23,6 +23,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 // import { RestaurantsDetailsComponent } from './restaurants-details/restaurants-details.component';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     // RestaurantsDetailsComponent,
     SearchFilterPipe,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
     // RouterOutlet
   ],
   imports: [

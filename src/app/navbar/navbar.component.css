@@ -7,7 +7,7 @@
   color: white;
 }
 
-.upper-navbar .menu-toggle {
+.upper-navbar  .menu-toggle{
   color: aliceblue;
   font-size: 30px;
   cursor: pointer;
@@ -377,8 +377,8 @@
 /* Backdrop for darkening background */
 .cart-backdrop {
   position: fixed;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
@@ -464,6 +464,31 @@
   margin-right: 10px; /* Add space between buttons */
 }
 
+/* Overlay to cover the whole screen */
+.loginTogglecard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it’s on top */
+}
+
+/* Style for the login card */
+.login-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 469px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+
 /* Mobile Styles */
 @media (max-width: 480px) {
   /* Make the greeting text smaller on mobile */
@@ -491,8 +516,8 @@
 
   /* Adjust the right position of the greeting for mobile */
   div[style*="position: relative"] {
-      right: 0;
-      top: 10px; /* Adjust top positioning */
+      right: 30px;
+      top: 10px; 
       text-align: center;
   }
   .menu-toggle{

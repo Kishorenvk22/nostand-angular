@@ -6,19 +6,19 @@ import { RegisterComponent } from './register/register.component';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+export class AuthGuard {
+  // constructor(private authService: AuthService, private router: Router) {}
 
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): boolean {
-    if (this.authService.isLoggedIn()) {
-      return true;  // Allow access if user is logged in
-    }
+  // canActivate(
+  //   next: ActivatedRouteSnapshot,
+  //   state: RouterStateSnapshot
+  // ): boolean {
+  //   if (this.authService.isLoggedIn()) {
+  //     return true;  
+  //   }
 
-    // Redirect to login page if not logged in
-    this.router.navigate(['/login']);
-    return false;
-  }
+ 
+  //   this.router.navigate(['/login']);
+  //   return false;
+  // }
 }

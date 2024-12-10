@@ -11,6 +11,7 @@ declare var Razorpay:any;
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit{
+  showLogin: boolean=true;
 
 
   constructor(private authservice:AuthService,private router:Router,private foodservice:FoodServiceService){}
@@ -27,7 +28,19 @@ export class NavbarComponent implements OnInit{
   // isLoggedIn:boolean=true;
   // username:string|null='';
   
-  
+  toggleLogin() {
+    this.showLogin = !this.showLogin;
+    if (this.showLogin) {
+      // Navigate to the child route 'login'
+      this.router.navigate(['loginforUser']);
+    } else {
+      // Navigate back to the parent route
+      this.router.navigate(['']);
+    }
+  }
+  closeLogin(event:MouseEvent){
+    this.showLogin=false;
+  }
 
   proceedToPayment() {
     console.log('razorpay')
