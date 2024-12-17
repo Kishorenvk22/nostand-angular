@@ -10,37 +10,16 @@
         <div class="rating">
           <ng-container *ngFor="let star of [].constructor(5); let i = index">
             <img
-              *ngIf="i < section.rating"
-              src="images/star.png" alt="Star" class="star-icon"/>
+              *ngIf="i < section.rating" src="images/star.png" alt="Star" class="star-icon"/>
             <img
-              *ngIf="i >= section.rating"
-              src="images/starEmpty.png" alt="Empty Star" class="star-icon"/>
+              *ngIf="i >= section.rating" src="images/starEmpty.png" alt="Empty Star" class="star-icon"/>
           </ng-container>
         </div>
       </div>
     </div>
     <button class="btn btn-primary menu-order" [routerLink]="['/dashboard/public-order']"
-      [queryParams]="{ restaurantId: section.id }">View Menu & Order</button>
+    [queryParams]="{ restaurantId: section.id }">View Menu & Order</button>
   </div>
 </div>
 
-<!-- <div class="restaurant-details">
-    <h3>Our Restaurants</h3>
-  
-    <div *ngFor="let section of restaurants" class="restaurants-section">
-        <img [src]="section.logoUrl" alt="{{ section.category }} logo" class="restaurant-logo" style="position: relative; bottom: 20px;">
-        
-        <h4 style="position: relative; bottom: 15px; font-size: 23px">{{section.category}}</h4>
-        
-        <div class="rating">
-            <ng-container *ngFor="let star of [].constructor(5); let i = index">
-                <img *ngIf="i < section.rating" src="images/star.png" alt="Star" class="star-icon">
-                <img *ngIf="i >= section.rating" src="images/starEmpty.png" alt="Empty Star" class="star-icon">
-            </ng-container>
-        </div>
-              <div class="button-menu-order">
-            <button class="btn btn-dark menu-order" [routerLink]="['/dashboard/public-order']" [queryParams]="{ restaurantId: section.id }">View menu & order</button>
-        </div>
-    </div>
-  </div> -->
   

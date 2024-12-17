@@ -39,25 +39,11 @@ export class HomeComponent implements OnInit {
     {
       id:4,
       category: 'Fast Food',
-      // items: ['Burger King', 'McDonald\'s', 'Wendy\'s']
       logoUrl:'images/fastfoodLogo.png',
       rating: 4,
 
     }
   ];
-
-  // sidebarOpen: boolean = false;
-
-  // restaurantCardOpen : boolean=false;
-
-  // toggleSidebar() {
-  //   this.sidebarOpen = !this.sidebarOpen;
-  // }
-
-  // toggleRestaurants(){
-
-  //   this.restaurantCardOpen=!this.restaurantCardOpen;
-  // }
 
 
 }

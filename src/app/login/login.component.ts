@@ -12,13 +12,10 @@ export class LoginComponent {
   showLogin: boolean = false;
 
   onSubmit() {
-    // Implement login functionality here
     console.log("Login form submitted!");
   }
 
-  // Handle Google login (mock function for now)
   loginWithGoogle() {
-    // Implement Google login logic here (e.g., using Firebase Auth or OAuth)
     console.log("Google login clicked!");
   }
 }
