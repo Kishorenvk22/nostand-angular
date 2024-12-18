@@ -11,7 +11,7 @@ declare var Razorpay:any;
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit{
-  showLogin: boolean=true;
+  showLogin: boolean=false;
 
 
   constructor(private authservice:AuthService,private router:Router,private foodservice:FoodServiceService){}
@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit{
   subtotal:number=0;
   gst:number=0;
   total:number=0;
+  username:string='Guest User';
   
   // userLoggedIn:boolean=true;
   // isLoggedIn:boolean=true;
@@ -83,9 +84,12 @@ export class NavbarComponent implements OnInit{
         this.total=this.foodservice.calculateTotal();
 
       });
-       // Log the data to console
-      //  this.userLoggedIn=this.authservice.isLoggedIn();
-      //  this.username=this.authservice.getUsername();
+      
+
+      const storedUsername=localStorage.getItem('username');
+      if(storedUsername){
+        this.username=storedUsername;
+      }
 
   }
   sidebarOpen: boolean = false;
@@ -99,11 +103,16 @@ export class NavbarComponent implements OnInit{
   toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;
   }
+  // Kishore@2212
   
-  logout() {
-    localStorage.removeItem('cart');
-    this.foodservice.clearCartData();
-    this.authservice.logout();
+  logout():void {
+    // this.sidebarOpen = !this.sidebarOpen;
+    localStorage.removeItem('username')
+    window.location.reload();    
+    
+    // localStorage.removeItem('cart');
+    // this.foodservice.clearCartData();
+    // this.authservice.logout();
     // this.isLoggedIn=false;
     // this.username=null;
     // this.router.navigate(['/login']);

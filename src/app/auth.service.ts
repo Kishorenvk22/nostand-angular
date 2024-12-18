@@ -9,14 +9,11 @@ export class AuthService {
 
 
   private loginUrl = 'http://localhost:8080/api/login'; 
- 
+  private loginUserUrl='http://localhost:8080/api/user';
 
   private isLoggedInStatus = false;
 
   
-
-
-
   constructor(private httpclient:HttpClient) { }
 
   
@@ -32,6 +29,11 @@ export class AuthService {
         }
       })
     );
+  }
+
+  loginUser(username:string,password:string):Observable<any>{
+    return this.httpclient.post(this.loginUserUrl,{username,password})
+
   }
 
   isLoggedIn(): boolean {

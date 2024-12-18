@@ -1,22 +1,24 @@
-<div class="upper-navbar">
+<!-- <div class="upper-navbar">
   <div class="menu-toggle" (click)="toggleSidebar()">
     <img style="height: 36px; " src="images/menu_icon.png">
   </div>
 
   <div class="brand" [routerLink]="['/dashboard/home']">FOOD</div>
+
   <div class="greeting-text">
-
-    <h6>Hi, Guest-User</h6>  
-     
-
+    <h6>Hi, {{username}}</h6>  
   </div>
+
   <div class="menu-items">
       <i  (click)="toggleUsercard()" style="cursor: pointer;">
           <div class="loginSignUp-buttons">
-            <button type="button" class="btn btn-outline-light mr-2" (click)="toggleLogin()">Login</button>
+            <button type="button" *ngIf="username === 'Guest User'" class="btn btn-outline-light mr-2" (click)="toggleLogin()">Login</button>
 
-            <button type="button" class="btn btn-outline-light">Sign-up</button>
-        </div>
+            <button type="button" *ngIf="username === 'Guest User'" class="btn btn-outline-light">Sign-up</button>
+
+            <button type="button" *ngIf="username !== 'Guest User'" class="btn btn-outline-light" (click)="logout()">Logout</button>
+
+          </div>
       </i>
       
         <div class="cart-icon">
@@ -26,7 +28,33 @@
           </button>
         </div>
   </div>
+</div> -->
+
+
+<div class="upper-navbar">
+  <div class="menu-toggle" (click)="toggleSidebar()">
+    <img class="menu-icon" src="images/menu_icon.png" alt="Menu">
+  </div>
+
+  <div class="brand" [routerLink]="['/dashboard/home']">FOOD</div>
+
+  <div class="greeting-text">
+    <h6>Hi, {{username}}</h6>
+  </div>
+
+  <div class="menu-items">
+    <i (click)="toggleUsercard()">
+      <div class="loginSignUp-buttons">
+        <button type="button" *ngIf="username === 'Guest User'" class="btn login-btn" (click)="toggleLogin()">Login</button>
+
+        <button type="button" *ngIf="username === 'Guest User'" class="btn signup-btn">Sign-up</button>
+
+        <button type="button" *ngIf="username !== 'Guest User'" class="btn logout-btn" (click)="logout()">Logout</button>
+      </div>
+    </i>
+  </div>
 </div>
+
 
 <div class="loginTogglecard" *ngIf="showLogin" (click)="closeLogin($event)">
   <div class="login-card" (click)="preventClose($event)">
@@ -129,7 +157,7 @@
       </a>
     </li>
     <li>
-      <a class="menu-link" (click)="logout()">
+      <a class="menu-link"  (click)="logout()">
         <!-- Added an icon next to the menu text -->
         <i class="fas fa-sign-out-alt"></i> Logout
       </a>

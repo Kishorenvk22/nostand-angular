@@ -1,4 +1,4 @@
-.upper-navbar {
+/* .upper-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,6 +24,125 @@
   margin-left: 20px;
   color: white;
   text-decoration: none;
+} */
+
+/* General Navbar Styling */
+.main-content{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* Base dark background */
+  font-family: 'Arial', sans-serif;
+}
+.upper-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #232526, #414345);
+  padding: 12px 24px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 0px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Menu Toggle */
+.menu-toggle {
+  cursor: pointer;
+}
+
+.menu-icon {
+  height: 36px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: invert(1);
+}
+
+.menu-icon:hover {
+  transform: scale(1.2) rotate(180deg);
+  filter: invert(0.8);
+}
+
+/* Brand Styling */
+.brand {
+  position: relative;
+  right: 290px;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.brand:hover {
+  color:  #ff9800;
+}
+ 
+/* Greeting Text */
+.greeting-text h6 {
+  position: relative;
+  right: 290px;
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Button Container */
+.menu-items {
+  display: flex;
+  align-items: center;
+}
+
+/* Button Styling */
+.loginSignUp-buttons button {
+  margin-left: 12px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* background: linear-gradient(135deg, #6a11cb, #2575fc); */
+  background: linear-gradient(135deg, #388e3c, #4caf50);
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.loginSignUp-buttons button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Specific Button Colors */
+.login-btn {
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+}
+
+.signup-btn {
+  background: linear-gradient(135deg, #ff9800, #ffb74d);
+}
+
+.logout-btn {
+  background: linear-gradient(135deg, #f44336, #e57373);
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #388e3c, #4caf50);
+}
+
+.signup-btn:hover {
+  background: linear-gradient(135deg, #fb8c00, #ff9800);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #d32f2f, #f44336);
 }
 
 
