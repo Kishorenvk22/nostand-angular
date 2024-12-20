@@ -1,5 +1,12 @@
 
  
-<router-outlet></router-outlet>
-<!-- <app-login></app-login> -->
+<div *ngIf="isLoading" id="preloader" [class.fade-out]="!isLoading">
+    <img src="images/loadingPage.png" alt="Loading...">
+  </div>
+  
+  <div *ngIf="!isLoading">
+    <!-- Your main app content -->
+    <router-outlet></router-outlet>
+  </div>
+  
 

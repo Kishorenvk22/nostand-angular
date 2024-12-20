@@ -1,9 +1,9 @@
-/* .upper-navbar {
+.upper-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #333;
-  padding: 20px 30px;
+  padding: 20px 16px; /* Add padding for better spacing on all screen sizes */
   color: white;
 }
 
@@ -14,6 +14,7 @@
 }
 
 .upper-navbar .brand {
+  width: 65px;
   font-size: 24px;
   position: absolute;
   left: 80px;
@@ -24,32 +25,18 @@
   margin-left: 20px;
   color: white;
   text-decoration: none;
-} */
+}
 
-/* General Navbar Styling */
 .main-content{
-  height: 100%;
+  max-height: 200%;
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #ffffff; /* Base dark background */
+  background: linear-gradient(#ddaf66);
   font-family: 'Arial', sans-serif;
 }
-.upper-navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(135deg, #232526, #414345);
-  padding: 12px 24px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  border-radius: 0px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
 
-/* Menu Toggle */
+
 .menu-toggle {
   cursor: pointer;
 }
@@ -65,7 +52,6 @@
   filter: invert(0.8);
 }
 
-/* Brand Styling */
 .brand {
   position: relative;
   right: 290px;
@@ -82,25 +68,20 @@
   color:  #ff9800;
 }
  
-/* Greeting Text */
-.greeting-text h6 {
-  position: relative;
-  right: 290px;
-  font-size: 16px;
+/* .greeting-username {
+  font-size: 20px;
   font-weight: 500;
   opacity: 0.9;
-}
+} */
 
-/* Button Container */
 .menu-items {
   display: flex;
   align-items: center;
 }
 
-/* Button Styling */
 .loginSignUp-buttons button {
-  margin-left: 12px;
-  padding: 10px 20px;
+  margin-left: 18px;
+  padding: 6px 20px;
   font-size: 14px;
   font-weight: 500;
   border-radius: 25px;
@@ -108,19 +89,21 @@
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
-  /* background: linear-gradient(135deg, #6a11cb, #2575fc); */
-  background: linear-gradient(135deg, #388e3c, #4caf50);
+  background: linear-gradient(135deg, #f44336, #e57373);
 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .loginSignUp-buttons button:hover {
   transform: translateY(-3px);
-  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  background: linear-gradient(135deg, #d32f2f, #f44336);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
+.loginSignUp-buttons{
+  position: relative;
+  right: 47px;
+}
 
-/* Specific Button Colors */
 .login-btn {
   background: linear-gradient(135deg, #4caf50, #66bb6a);
 }
@@ -145,48 +128,6 @@
   background: linear-gradient(135deg, #d32f2f, #f44336);
 }
 
-
-/* Side Navbar */
-/* .side-navbar {
-  position: fixed;
-  top: 0;
-  left: -250px; 
-  width: 250px;
-  height: 100%;
-  background-color:#333;
-  color: rgb(255, 255, 255);
-  transition: left 0.4s ease; 
-  padding-top: 60px;
-  z-index: 1000; 
-}
-
-.side-navbar.open {
-  left: 0; 
-}
-
-.side-navbar ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.side-navbar ul li {
-  padding: 15px;
-}
-
-.side-navbar ul li a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  display: block;
-}
-
-.side-navbar .btn-close {
-  font-size: 20px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-} */
-
 .side-navbar {
   position: fixed;
   top: 0;
@@ -204,19 +145,8 @@
 }
 
 .side-navbar.open {
-  left: 0; /* Sidebar slides in */
+  left: 0; 
 }
-
-/* .btn-close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 18px;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-} */
 
 .sidebar-header {
   text-align: center;
@@ -274,41 +204,40 @@
 
 
 /* Ensure the cart icon stays on top */
-.cart-icon {
+/* .cart-icon {
   position: fixed;
-  bottom: 16px;  /* 16px from the bottom of the page */
-  right: 16px;   /* 16px from the right of the page */
-  z-index: 1000; /* Ensure it stays above other content */
+  bottom: 16px;  
+  right: 16px;  
+  z-index: 1000; 
 }
 
 .cart-icon button {
-  background-color: rgb(0, 0, 0);   /* Black background */
-  color: rgb(255, 255, 255);         /* White text */
+  background-color: rgb(0, 0, 0);   
+  color: rgb(255, 255, 255);         
   border: none;
-  border-radius: 50%;                /* Make it a circular button */
-  padding: 16px;                     /* Increase padding to make it larger */
-  cursor: pointer;                  /* Pointer cursor on hover */
-  display: flex;                     /* Align icon and text */
-  align-items: center;               /* Vertically align items */
-  justify-content: center;           /* Horizontally align items */
-  font-size: 16px;                   /* Set font size for the text */
+  border-radius: 50%;                
+  padding: 16px;                     
+  cursor: pointer;                 
+  display: flex;                     
+  align-items: center;              
+  justify-content: center;          
+  font-size: 16px;                  
 }
 
 .cart-icon button:hover {
-  background-color: rgb(58, 58, 58);            /* Darker background on hover */
+  background-color: rgb(58, 58, 58);          
 }
 
 .cart-icon i {
-  margin-right: 2px;                 /* Space between the icon and the text */
-  font-size: 24px;                   /* Increase size of the cart icon */
+  margin-right: 2px;                 
+  font-size: 24px;                   
 }
 
-/* Cart Icon Styles */
 .cart-icon {
   position: fixed;
   bottom: 16px;
   right: 16px;
-  z-index: 1000; /* Make sure it's on top of other elements */
+  z-index: 1000; 
 }
 
 .cart-icon button {
@@ -327,7 +256,41 @@
 .cart-icon i {
   font-size: 24px;
   margin-right: 8px;
+} */
+
+.cart-icon {
+  position: relative;
+  right: 28px;
+  transform: scaleX(-1); /* Flip the element vertically */
 }
+.cart-icon i {
+  font-size: 28px;  
+
+}
+
+/* Cart button styling */
+.cart-icon button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px; /* Icon size */
+  position: relative;
+}
+
+/* Badge styling for item count */
+.badge {
+  position: absolute;
+  top: 16px;
+  right: 45px;
+  background-color: red;
+  color: white;
+  border-radius: 42%;
+  padding: 4px 7px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
 
 /* Cart Modal Styles */
 .cart-modal {
@@ -495,13 +458,18 @@
 
 /* Backdrop for darkening background */
 .cart-backdrop {
+  /* position: absolute;
+  width: 100%;
+  height: 10vw;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 998;  */
   position: fixed;
-  /* top: 0;
-  left: 0; */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-  z-index: 998; /* Ensure it's behind the cart-container */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998; /* Below the navbar */
 }
 .navbar-backdrop {
   position: fixed;
@@ -564,24 +532,6 @@
   background-color: rgba(0, 0, 0, 0); /* Semi-transparent black */
   z-index: 998; /* Ensure it's behind the cart-container */
 }
-/* .loginSignUp-buttons .btn {
-  margin-right: 15px; 
-} */
-/* Default Styles */
-.greeting-text {
-  position: relative; 
-  right: 180px; 
-  top: 5px;
-}
-
-.loginSignUp-buttons {
-  display: flex;
-  gap: 10px; /* Space between the buttons */
-}
-
-.loginSignUp-buttons .btn {
-  margin-right: 10px; /* Add space between buttons */
-}
 
 /* Overlay to cover the whole screen */
 .loginTogglecard {
@@ -594,36 +544,87 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure it’s on top */
+  z-index: 1000; 
 }
 
-/* Style for the login card */
+.greeting-container {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  z-index: 10;
+}
+
+/* Greeting box with cloud shape */
+.greeting-username {
+  background-color: #e45353;    /* Example background color */
+  color: #fff;                  /* Text color */
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  border-radius: 0px 20px 20px 20px; /* Rounded edges to create a cloud-like shape */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateX(-100px);  /* Start position for popup effect */
+  animation: pop-in-out 2s ease-in-out forwards;
+}
 
 
 
-/* Mobile Styles */
-@media (max-width: 480px) {
-  /* Make the greeting text smaller on mobile */
-  .greeting-text h6 {
-    position: relative;
-    left: 117px;
-    bottom: 30px;
-    font-weight: 300;
+@keyframes pop-in-out {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
   }
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments for mobile view */
+@media (max-width: 768px) {
+  .greeting-username {
+    font-size: 13px;
+    padding: 8px 41px;
+    border-radius: 0px 20px 0px 20px; /* Rounded edges to create a cloud-like shape */
+
+  }
+  .greeting-container{
+    top: 95px;
+    left: 93px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* .greeting-username {
+    font-size: 16px;     
+    margin-right: 10px; 
+  } */
   .brand{
     margin-top: 42px;
   }
 
-  /* Stack the buttons vertically on mobile */
-  .loginSignUp-buttons {
-      flex-direction: column;
-      align-items: center;
-  }
+
 
   .loginSignUp-buttons .btn {
-    margin-bottom: 3px;
-    font-size: small;
-    padding: 6px;
+    margin-bottom: -6px;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .loginSignUp-buttons{
+    position: relative;
+    right: 30px;
+    top: 0px;
   }
 
   /* Adjust the right position of the greeting for mobile */
@@ -641,23 +642,52 @@
 
 @media (max-width: 768px) {
   .cart-icon button {
-    padding: 12px;        /* Smaller padding on mobile */
-    font-size: 14px;      /* Adjust text size */
+    padding: 12px;        
+    font-size: 14px;     
   }
   
   .cart-icon i {
-    font-size: 20px;      /* Adjust cart icon size */
+    font-size: 23px;
+    position: absolute;
+    top: 0px;
+    right: -9px;
+  }
+  .cart-icon{
+    right: 5px;
+  }
+  .badge{
+    right: 16px;
+    top: 20px;
   }
 }
 
 
 @media (max-width: 480px) {
+
+  .upper-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 20px 16px; /* Add padding for better spacing on all screen sizes */
+    color: white;
+  }
+  .menu-toggle{
+    margin-top: 5px;
+  }
+  
+  .brand {
+    margin-bottom: 37px;
+
+  }
+  
+
   .cart-container {
     height: 66%; /* Adjust height dynamically */
     width: 88%; /* Use most of the screen width */
     right: 25px;
     /* margin: 0 auto;  */
-    top: 202px; /* Adjust position */
+    top: 111px; /* Adjust position */
     background: #fff; /* Add background for better visibility */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

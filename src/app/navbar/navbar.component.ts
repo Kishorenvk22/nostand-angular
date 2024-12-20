@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit{
   gst:number=0;
   total:number=0;
   username:string='Guest User';
+  showgreeting = true;
   
   // userLoggedIn:boolean=true;
   // isLoggedIn:boolean=true;
@@ -71,6 +72,12 @@ export class NavbarComponent implements OnInit{
     });
   }
   ngOnInit(): void {
+
+
+    setTimeout(()=>{
+      this.showgreeting=false;
+    },2000);
+
     this.foodservice.currentData.subscribe((data: any[])=>
       {
         this.cartData=data;
