@@ -1,8 +1,7 @@
 <div class="login-container">
     <h2 class="login-title">Login to Your Account</h2>
   
-    <!-- Login with Google button -->
-    <button class="google-login-btn" (click)="loginWithGoogle()">
+    <!-- <button class="google-login-btn" (click)="loginWithGoogle()">
         <img src="images/googleIcon.png" alt="Google" class="google-icon"/>
         Login with Google
       </button>
@@ -10,7 +9,7 @@
   
     <div class="divider">
       <span>OR</span>
-    </div>
+    </div> -->
   
     <!-- Login form -->
     <form (ngSubmit)="onLogin()">
@@ -22,6 +21,9 @@
       <div class="form-group">
         <label for="password">Password</label>
         <input type="password" [(ngModel)]="password" id="password" name="password" required />
+      </div>
+      <div *ngIf="loginError" class="alert alert-danger">
+        {{loginError}}
       </div>
   
       <button type="submit" class="login-btn">Login</button>

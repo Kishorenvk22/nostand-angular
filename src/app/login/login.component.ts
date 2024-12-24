@@ -12,6 +12,7 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
   showLogin: boolean = false;
+  loginError:String='';
 
   constructor(private authservice: AuthService,private router:Router){}
 
@@ -23,7 +24,7 @@ export class LoginComponent {
         window.location.reload();    
       },
       (error) => {
-        console.error('Login failed', error);  // Handle error if login fails
+        this.loginError='Incorrect username or password';
       }
     )
     }

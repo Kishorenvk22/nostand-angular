@@ -132,6 +132,15 @@
 .signup-link a:hover {
   text-decoration: underline;
 }
+.alert-danger{
+    padding: 6px;
+    height: 30px;
+    /* width: 223px; */
+    font-size: smaller;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
 
 /* Responsive Design */
 @media (max-width: 600px) {
