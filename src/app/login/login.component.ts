@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
@@ -7,7 +7,7 @@ import { AuthService } from '../auth.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   username: string = '';
   password: string = '';
@@ -16,6 +16,12 @@ export class LoginComponent {
 
   constructor(private authservice: AuthService,private router:Router){}
 
+  ngOnInit() {
+    console.log('login Loaded');
+  }
+  closeLogin() {
+    this.router.navigate(['/dashboard/home']);
+  }
   onLogin():void{
     if(this.username && this.password){
     this.authservice.loginUser(this.username,this.password).subscribe(

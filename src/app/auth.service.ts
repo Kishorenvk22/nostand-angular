@@ -9,8 +9,8 @@ export class AuthService {
 
 
   private loginUrl = 'http://localhost:8080/api/login'; 
-  // private loginUserUrl='http://localhost:8080/api/user';
-  private loginUserUrl='  https://nostand-springboot-production.up.railway.app/api/user';
+  private loginUserUrl='http://localhost:8080/api/user';
+  // private loginUserUrl='  https://nostand-springboot-production.up.railway.app/api/user';
   
 
   private isLoggedInStatus = false;

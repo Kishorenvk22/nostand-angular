@@ -12,8 +12,8 @@ export class FoodServiceService {
   private cartData= new BehaviorSubject<any[]>([]);
   currentData=this.cartData.asObservable();
 
-  private apiUrl = 'https://nostand-springboot-production.up.railway.app/api/payment';
-  // private apiUrl= 'http://localhost:8080/api/payment';
+  // private apiUrl = 'https://nostand-springboot-production.up.railway.app/api/payment';
+  private apiUrl= 'http://localhost:8080/api/payment';
 
 
 
