@@ -19,6 +19,7 @@ formData = {
   };
   enteredOtp = '';
   otpSent = false;
+ 
 
   constructor(private router:Router, private otpService: OtpService) {}
 
