@@ -4,34 +4,59 @@
 }
  
 .back-button {
-  background-color: #009688;
+  background-color: #3b82f6;
   color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #467bec; /* Brighter hover */
+  transform: translateY(-2px); /* Button lift effect */
 }
  
 .search-bar {
   display: flex;
-  margin: 16px 0;
+  margin: 20px 0;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb; /* Subtle border color */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
- 
+
 .search-bar input {
   flex: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: #9ca3af;
 }
  
 .clear-btn {
-  background-color: #f44336;
+  background-color: #ef4444;
   color: white;
   border: none;
-  padding: 8px;
+  padding: 10px 16px;
   margin-left: 8px;
+  border-radius: 10px;
+  font-size: 14px;
   cursor: pointer;
-  border-radius: 4px;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.clear-btn:hover {
+  background-color: #dc2626;
+  transform: scale(1.05); /* Subtle zoom */
 }
  
 .category-title {
@@ -51,13 +76,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #ddd;
+  border: 1px solid #d6d7da;
   border-radius: 8px;
   padding: 8px;
   width: 100%;
   max-width: 300px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -2px -2px 6px rgba(255, 255, 255, 0.6); /* Neumorphism shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+
 }
  
+.item:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15), -3px -3px 8px rgba(255, 255, 255, 0.8); /* Highlighted shadow */
+}
+
 .item-info {
   flex: 1;
 }
@@ -68,7 +101,7 @@
 }
  
 .item-price {
-  color: #777;
+  color: #888888;
 }
  
 .item-image {
@@ -88,6 +121,7 @@
 .add-button {
   background-color: #4caf50;
   color: white;
+  font-size: 14px;
   border: none;
   padding: 8px 12px;
   border-radius: 4px;

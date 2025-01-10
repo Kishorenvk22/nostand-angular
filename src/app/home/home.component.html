@@ -1,4 +1,15 @@
-<div class="restaurant-details">
+
+<div class="image-container">
+  <img src="images/Home.png" style="height: 100%;
+  width: 100%;">
+  <div class="text-container">
+    <p class="pop-in-text">Taste the difference in every bite.</p>
+    <button id="move-to-restaurant">Move to restaurants</button>
+  </div>
+</div>
+
+
+<!-- <div class="restaurant-details">
   <h3 class="title">Our Restaurants</h3>
 
   <div *ngFor="let section of restaurants" class="restaurants-section">
@@ -20,7 +31,34 @@
     <button class="btn btn-primary menu-order" [routerLink]="['/dashboard/public-order']"
     [queryParams]="{ restaurantId: section.id }">View Menu & Order</button>
   </div>
+</div> -->
+<div class="restaurant-details">
+  <h3 class="title">Our Restaurants</h3>
+  <div class="restaurants-grid">
+    <div *ngFor="let section of restaurants" class="restaurant-card">
+      <img [src]="section.imageUrl" alt="{{ section.category }}" class="restaurant-image" />
+      <div class="card-content">
+        <h4 class="restaurant-name">{{ section.name }}</h4>
+        <p class="restaurant-cuisine">{{ section.cuisine }}</p>
+        <p class="restaurant-info">
+          <span class="rating">⭐ {{ section.rating }}</span>
+          <span class="delivery-time">{{ section.deliveryTime }}</span>
+        </p>
+      </div>
+      <div class="card-footer">
+        <button
+          class="btn view-menu"
+          [routerLink]="['/dashboard/public-order']"
+          [queryParams]="{ restaurantId: section.id }"
+        >
+          View Menu & Order
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 
+
+<router-outlet></router-outlet>
 
   

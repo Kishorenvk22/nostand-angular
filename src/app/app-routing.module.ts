@@ -10,29 +10,37 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PublicOrderComponent } from './public-order/public-order.component';
 import { RegisterComponent } from './register/register.component';
 import { RestaurantsDetailsComponent } from './restaurants-details/restaurants-details.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 // import { RestaurantsDetailsComponent } from './restaurants-details/restaurants-details.component';
 
 
-
 const routes: Routes = [
-  
   {
-    path: 'dashboard', component: NavbarComponent, children: [
+    path: 'dashboard',
+    component: NavbarComponent,
+    children: [
       {
-        path: 'home', component: HomeComponent  // Home page after login
-        
+        path: 'home',
+        component: HomeComponent,
+        children: [
+          {
+            path: 'signUp',
+            component: SignUpComponent,
+          },
+        ],
       },
       {
-        path: 'loginforUser', component: LoginComponent 
+        path: 'loginforUser',
+        component: LoginComponent,
       },
       {
-        path: 'public-order', component: PublicOrderComponent  // Public Order page
-      }
-    ]
+        path: 'public-order',
+        component: PublicOrderComponent,
+      },
+    ],
   },
   { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
-  // { path: '**', redirectTo: 'login' }
-  
+  { path: '**', redirectTo: '/dashboard/home' }, // Fallback for unknown routes
 ];
 
 

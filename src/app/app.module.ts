@@ -24,6 +24,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { LoginComponent } from './login/login.component';
     // RestaurantsDetailsComponent,
     SearchFilterPipe,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    SignUpComponent,
     // RouterOutlet
   ],
   imports: [

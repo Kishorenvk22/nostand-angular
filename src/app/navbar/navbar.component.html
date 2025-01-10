@@ -1,86 +1,44 @@
 <div class="upper-navbar">
-  <div class="menu-toggle" (click)="toggleSidebar()">
-    <img style="height: 36px; " src="images/menu_icon.png">
-  </div>
+      <div class="menu-toggle" (click)="toggleSidebar()">
+        <img style="height: 36px; " src="images/menu_icon.png">
+      </div>
 
-  <div class="brand" [routerLink]="['/dashboard/home']">FOOD</div>
+      <div class="brand" [routerLink]="['/dashboard/home']">FOOD</div>
 
+      <div class="greeting-container" *ngIf="showgreeting">
+        <div class="greeting-username">Hello, {{username}}</div>
+      </div>
   
-    <!-- <span class="greeting-username">Hi, {{username}}</span>   -->
-    <div class="greeting-container" *ngIf="showgreeting">
-      <div class="greeting-username">Hello, {{username}}</div>
-    </div>
-  
+      <div class="menu-items">
+          <i  (click)="toggleUsercard()" style="cursor: pointer;">
+              <div class="loginSignUp-buttons">
+                <button type="button" *ngIf="username === 'Guest User'" class="btn btn-outline-light mr-2" 
+                (click)="toggleLogin()">Login</button>
 
-  <div class="menu-items">
-      <i  (click)="toggleUsercard()" style="cursor: pointer;">
-          <div class="loginSignUp-buttons">
-            <button type="button" *ngIf="username === 'Guest User'" class="btn btn-outline-light mr-2" (click)="toggleLogin()">Login</button>
+                <button type="button" *ngIf="username === 'Guest User'" class="btn btn-outline-light"   
+                [routerLink]="['/dashboard/home/signUp']"
+                >Sign-up</button>
 
-            <button type="button" *ngIf="username === 'Guest User'" class="btn btn-outline-light">Sign-up</button>
+              </div>
+          </i>
 
-            <!-- <button type="button" *ngIf="username !== 'Guest User'" class="btn btn-outline-light" (click)="logout()">Logout</button> -->
-
+          <div class="cart-icon" (click)="toggleCart()">
+            <button>
+              <i class="fa fa-shopping-cart" >🛒</i>
+            </button>
           </div>
-      </i>
-      
-        <!-- <div class="cart-icon">
-          <button (click)="toggleCart()">
-            <i class="fa fa-shopping-cart" style="font-size:36px"></i>
-            Item(s): {{ cartData.length }}
-          </button>
-        </div> -->
-        <div class="cart-icon" (click)="toggleCart()">
-          <button>
-            <i class="fa fa-shopping-cart" >🛒</i>
-          </button>
-        </div>
-        <span class="badge">{{ cartData.length }}</span>
-
-  </div>
+          <span class="badge">{{ cartData.length }}</span>
+    </div>
 </div>
 
-
-<!-- <div class="upper-navbar">
-  <div class="menu-toggle" (click)="toggleSidebar()">
-    <img class="menu-icon" src="images/menu_icon.png" alt="Menu">
-  </div>
-
-  <div class="brand" [routerLink]="['/dashboard/home']">FOOD</div>
-
-  <div class="greeting-text">
-    <h6 style="position: relative;
-    top: -8px;
-    right: 82px;">Hi, {{username}}</h6>
-  </div>
-
-  <div class="menu-items">
-    <i (click)="toggleUsercard()">
-      <div class="loginSignUp-buttons">
-        <button type="button" *ngIf="username === 'Guest User'" class="btn login-btn" (click)="toggleLogin()">Login</button>
-
-        <button type="button" *ngIf="username === 'Guest User'" class="btn signup-btn">Sign-up</button>
-
-        <button type="button" *ngIf="username !== 'Guest User'" class="btn logout-btn" (click)="logout()">Logout</button>
-      </div>
-    </i>
-
-    <div class="cart-icon">
-      <button (click)="toggleCart()">
-        <i class="cart-icon">🛒</i>
-        Item(s): {{ cartData.length }}
-      </button>
-    </div>
-  </div>
-</div> -->
-
-
+<!-- Login container -->
 <div class="loginTogglecard" *ngIf="showLogin" (click)="closeLogin($event)">
   <div class="login-card" (click)="preventClose($event)">
+    <button class="close-btn" (click)="closeLogin($event)">✖</button>
+
     <app-login></app-login>
   </div>
 </div>
-
 
 <div class="cart-backdrop" *ngIf="istogglecartOpen" (click)="toggleCart()" >
 <div *ngIf="istogglecartOpen" class="cart-container" (click)="preventClose($event)">
@@ -140,12 +98,11 @@
 
   <!-- Added a sidebar header section -->
   <div class="sidebar-header">
-    <h2>Menu</h2>
+    <!-- <h2>Menu</h2> -->
   </div>
 
   <ul class="sidebar-menu">
     <li (click)="preventClose($event)">
-      <!-- Added an icon next to the menu text -->
       <a
         class="menu-link"
         [routerLink]="['/dashboard/home']"
@@ -156,19 +113,16 @@
     </li>
     <li>
       <a class="menu-link">
-        <!-- Added an icon next to the menu text -->
         <i class="fas fa-comments"></i> Feedback
       </a>
     </li>
     <li>
       <a class="menu-link">
-        <!-- Added an icon next to the menu text -->
         <i class="fas fa-user"></i> My Profile
       </a>
     </li>
     <li>
       <a class="menu-link"  (click)="logout()">
-        <!-- Added an icon next to the menu text -->
         <i class="fas fa-sign-out-alt"></i> Logout
       </a>
     </li>

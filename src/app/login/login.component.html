@@ -1,15 +1,6 @@
 <div class="login-container">
+
     <h2 class="login-title">Login to Your Account</h2>
-  
-    <!-- <button class="google-login-btn" (click)="loginWithGoogle()">
-        <img src="images/googleIcon.png" alt="Google" class="google-icon"/>
-        Login with Google
-      </button>
-      
-  
-    <div class="divider">
-      <span>OR</span>
-    </div> -->
   
     <!-- Login form -->
     <form (ngSubmit)="onLogin()">
@@ -20,8 +11,19 @@
   
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" [(ngModel)]="password" id="password" name="password" required />
+        <div class="password-wrapper">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            [(ngModel)]="password"
+            id="password"
+            name="password"
+            required
+          />
+          <img [src]="showPassword ? 'images/view.png':'images/hide.png'" class="toggle-password" 
+          (click)="togglePasswordVisibility()">
+        </div>
       </div>
+
       <div *ngIf="loginError" class="alert alert-danger">
         {{loginError}}
       </div>
@@ -33,7 +35,7 @@
     <div class="links">
       <a href="#" class="forgot-password">Forgot Password?</a>
       <p class="signup-link">
-        Don't have an account? <a href="#">Sign up</a>
+        Don't have an account? <a [routerLink]="['/dashboard/home/signUp']">Sign up</a>
       </p>
     </div>
   </div>

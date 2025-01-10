@@ -13,14 +13,27 @@ export class LoginComponent implements OnInit {
   password: string = '';
   showLogin: boolean = false;
   loginError:String='';
+  
+  showPassword: boolean = false;
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+  closeModal(){
+    this.router.navigate(['/dashboard/home'])
+  }
 
   constructor(private authservice: AuthService,private router:Router){}
 
   ngOnInit() {
     console.log('login Loaded');
   }
-  closeLogin() {
-    this.router.navigate(['/dashboard/home']);
+  closeLogin(event: Event): void {
+    event.stopPropagation(); // Prevent triggering parent click handler
+    this.showLogin = false; // Hide the login card
+  }
+  preventClose(event: Event): void {
+    event.stopPropagation(); // Prevent closing when clicking inside the login card
   }
   onLogin():void{
     if(this.username && this.password){

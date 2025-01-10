@@ -26,19 +26,8 @@ export class NavbarComponent implements OnInit{
   username:string='Guest User';
   showgreeting = true;
   
-  // userLoggedIn:boolean=true;
-  // isLoggedIn:boolean=true;
-  // username:string|null='';
-  
   toggleLogin() {
     this.showLogin = !this.showLogin;
-    if (this.showLogin) {
-      // Navigate to the child route 'login'
-      // this.router.navigate(['loginforUser']);
-    } else {
-      // Navigate back to the parent route
-      this.router.navigate(['']);
-    }
   }
   closeLogin(event:MouseEvent){
     this.showLogin=false;
