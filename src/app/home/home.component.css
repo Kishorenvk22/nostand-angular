@@ -211,7 +211,7 @@
     font-style: normal;
     font-size: xxx-large;
     color: #333;
-    margin-top: 130px;
+    margin-top: 0px;
     animation: popIn 1s ease-out;
     max-width: 300px; /* Adjust this to control line breaks */
     line-height: 1.5; /* Adjust spacing between lines */

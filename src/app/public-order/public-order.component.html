@@ -1,4 +1,4 @@
-
+<!-- 
 
  <div class="menu-container">
   <button class="back-button" [routerLink]="['/dashboard/home']">← Back to restaurants</button>
@@ -41,6 +41,48 @@
     <div class="modal-actions">
       <button class="add-to-cart" (click)="addToCart()" type="button" class="btn btn-success">Add to Cart</button>
       <button class="close-modal" (click)="closeModal()" type="button" class="btn btn-danger">Cancel</button>
+    </div>
+  </div>
+</div> -->
+<div class="menu-wrapper">
+  <button class="back-btn" [routerLink]="['/dashboard/home']">← Back</button>
+
+  <div class="search-wrapper">
+    <input type="text" class="search-input" placeholder="Search menu..." [(ngModel)]="searchText" />
+    <button class="search-clear" (click)="clearSearch()">✖</button>
+  </div>
+
+  <div class="menu-category" *ngFor="let category of menu | searchfilter:searchText">
+    <h3 class="category-heading">{{ category.name }}</h3>
+    <div class="menu-items">
+      <div *ngFor="let item of category.items" class="menu-item">
+        <div class="menu-item-details">
+          <img [src]="item.imageUrl" alt="{{ item.name }}" class="menu-item-image" />
+          <div class="menu-item-info">
+            <p class="item-name">{{ item.name }}</p>
+            <p class="item-price">₹{{ item.price }}</p>
+          </div>
+        </div>
+        <button class="menu-add-btn" (click)="openAddToCartModal(item)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cart-modal" *ngIf="isModalOpen">
+  <div class="cart-modal-content">
+    <h4 class="selectedItemName">Add {{ selectedItem?.name }} to Cart</h4>
+    <div class="cart-item-display">
+      <img [src]="selectedItem?.imageUrl" alt="{{ selectedItem?.name }}" class="cart-item-image" />
+      <div class="cart-quantity-controls">
+        <button (click)="decreaseQuantity()" class="qty-btn">-</button>
+        <span class="quantity">{{ selectedItem?.quantity }}</span>
+        <button (click)="increaseQuantity()" class="qty-btn">+</button>
+      </div>
+    </div>
+    <div class="cart-modal-actions">
+      <button (click)="addToCart()" class="modal-action-add">Confirm</button>
+      <button (click)="closeModal()" class="modal-action-cancel">Cancel</button>
     </div>
   </div>
 </div>
